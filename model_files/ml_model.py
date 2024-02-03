@@ -22,18 +22,14 @@ from sklearn.compose import ColumnTransformer
 from sklearn.compose import make_column_selector,make_column_transformer
 from sklearn.cluster import KMeans
 from sklearn.metrics.pairwise import rbf_kernel
+from sklearn.model_selection import train_test_split
 
 
-data=pd.read_csv("datasets\housing\housing.csv")
+housing=pd.read_csv("datasets\housing\housing.csv")
 #print(housing)
 
-housing=data.drop("median_house_value",axis=1)
+train_set, test_set = train_test_split(housing, test_size=0.2, random_state=42)
 
-housing_train=housing[:-15]
-housing_test=housing[-15:]
-#print(housing_test)
-
-some_data=housing_test[:3]
 
 class ClusterSimilarity(BaseEstimator,TransformerMixin):
   def __init__(self,n_clusters=10,gamma=0.1,random_state=None):
@@ -99,7 +95,7 @@ def pipeline_transformer():
             ("cat", cat_pipeline, make_column_selector(dtype_include=object)),
         ],
         remainder=default_num_pipeline) 
-    preprocessing_pipeline.fit_transform(housing_train)
+    preprocessing_pipeline.fit_transform(train_set)
 
 def predict_data(data):
   with open("model_files\housing.pkl", "rb") as file:
