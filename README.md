@@ -54,7 +54,6 @@ Dataset source: [California Housing dataset](https://www.kaggle.com/datasets/cam
 2. Install the required packages:
 ```
     pip install -r requirements.txt
-
 ```
 
 3. Explore the Jupyter notebooks in the to understand the data and the steps taken in the project.
@@ -89,7 +88,6 @@ A simple web application has been created for deploying the trained model. To ru
 
 ```
 python app.py
-
 ```
 
 Visit http://localhost:8080 in your web browser to interact with the application.
