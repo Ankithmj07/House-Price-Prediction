@@ -48,7 +48,6 @@ Dataset source: [California Housing dataset](https://www.kaggle.com/datasets/cam
  ```
     git clone https://github.com/Ankithmj07/House-Price-Prediction.git
     cd House-Price-Prediction
-
  ```
 
 2. Install the required packages:
