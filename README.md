@@ -86,7 +86,7 @@ print(f'Predicted house price: ${prediction[0]:,.2f}')
 A simple web application has been created for deploying the trained model. To run the application, execute the following command:
 
 ```
-python app.py
+python main.py
 ```
 
 Visit http://localhost:8080 in your web browser to interact with the application.
